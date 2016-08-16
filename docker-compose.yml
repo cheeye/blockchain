@@ -3,7 +3,7 @@ vp0:
     environment:
     - CORE_PEER_ID=vp0
     - CORE_PEER_ADDRESSAUTODETECT=true
-    - nCORE_VM_ENDPOINT=http://172.17.0.1:2375
+    - CORE_VM_ENDPOINT=http://172.17.0.1:2375
     - CORE_LOGGING_LEVEL=DEBUG
     command: peer node start
 vp1:
