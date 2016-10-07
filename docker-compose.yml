@@ -1,5 +1,8 @@
 vp0:
     image: hyperledger/fabric-peer
+    ports:
+    - 5000:5000
+    - 30000:30303
     environment:
     - CORE_PEER_ID=vp0
     - CORE_PEER_ADDRESSAUTODETECT=true
@@ -9,6 +12,9 @@ vp0:
 vp1:
     extends:
         service: vp0
+    ports:
+    - 5001:5000
+    - 30001:30303
     environment:
       - CORE_PEER_ID=vp1
       - CORE_PEER_DISCOVERY_ROOTNODE=vp0:30303
@@ -17,6 +23,9 @@ vp1:
 vp2:
     extends:
         service: vp0
+    ports:
+    - 5002:5000
+    - 30002:30303
     environment:
       - CORE_PEER_ID=vp2
       - CORE_PEER_DISCOVERY_ROOTNODE=vp0:30303
@@ -25,6 +34,9 @@ vp2:
 vp3:
     extends:
         service: vp0
+    ports:
+    - 5003:5000
+    - 30003:30303
     environment:
       - CORE_PEER_ID=vp3
       - CORE_PEER_DISCOVERY_ROOTNODE=vp0:30303
